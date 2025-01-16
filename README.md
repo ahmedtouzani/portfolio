@@ -98,7 +98,7 @@ This project is open source and available under the [MIT License](LICENSE).
 Ahmed Touzani
 - Email: touzaniahmed39@gmail.com
 - LinkedIn: [ahmed-touzani](https://linkedin.com/in/ahmed-touzani)
-- GitHub: [AhmedTou](https://github.com/AhmedTou)
+- GitHub: [ahmedtouzani](https://github.com/ahmedtouzani)
 
 ---
 Made with ❤️ in Morocco by Ahmed Touzani
