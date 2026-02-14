@@ -48,6 +48,13 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => ripple.remove(), 1000);
     }
 
+    // Set current year
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
+
     // Form submission with EmailJS
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
@@ -165,22 +172,84 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Typing animation for hero text
-const typingEffect = () => {
-    const text = "Full Stack Web Developer crafting modern digital experiences";
-    const heroText = document.querySelector('.hero-text');
-    let i = 0;
+// Advanced Terminal Typing Effect
+const initTerminalEffect = () => {
+    const terminalBody = document.getElementById('hero-terminal');
+    if (!terminalBody) return;
 
-    heroText.innerHTML = '';
-    const typing = setInterval(() => {
-        if (i < text.length) {
-            heroText.innerHTML += text.charAt(i);
-            i++;
+    const sequence = [
+        { text: "whoami", type: "command", delay: 1000 },
+        { 
+            text: "Initialising Identity...\n[✓] Full Stack Architect loaded\n[✓] Growth Systems active\n[✓] Agentic Protocols engaged\n\n> Result: ENTP / Builder / Automator", 
+            type: "output", 
+            delay: 500 
+        },
+        { text: "ls ./current_focus", type: "command", delay: 2000 },
+        { 
+            text: "drwx------  architect  staff  Custom_OpenClaw_Workspaces\n-rwx------  architect  staff  Raymond_Bot_v2.0\n-rwx------  architect  staff  High_Scale_Funnels", 
+            type: "output", 
+            delay: 500 
+        },
+        { text: "cat status.txt", type: "command", delay: 2000 },
+        { text: "Status: OPEN FOR HIGH-IMPACT COLLABORATION", type: "output", highlight: true, delay: 500 }
+    ];
+
+    let stepIndex = 0;
+
+    const typeLine = async (line) => {
+        const div = document.createElement('div');
+        div.className = line.type === 'command' ? 'command-line' : 'output-line';
+        
+        if (line.type === 'command') {
+            div.innerHTML = `<span class="prompt">user@portfolio:~$</span> <span class="typing"></span>`;
+            terminalBody.appendChild(div);
+            const span = div.querySelector('.typing');
+            await typeText(span, line.text);
+            span.classList.remove('typing');
+            span.classList.add('command');
         } else {
-            clearInterval(typing);
+            div.textContent = line.text;
+            if (line.highlight) div.style.color = '#ffffffff'; /* Electric Crimson */
+            div.style.whiteSpace = 'pre-wrap';
+            div.style.marginBottom = '1rem';
+            terminalBody.appendChild(div);
         }
-    }, 50);
+        
+        terminalBody.scrollTop = terminalBody.scrollHeight;
+    };
+
+    const typeText = (element, text) => {
+        return new Promise(resolve => {
+            let i = 0;
+            const interval = setInterval(() => {
+                element.textContent += text.charAt(i);
+                i++;
+                if (i >= text.length) {
+                    clearInterval(interval);
+                    resolve();
+                }
+            }, 50 + Math.random() * 30);
+        });
+    };
+
+    const runSequence = async () => {
+        for (const step of sequence) {
+            await new Promise(r => setTimeout(r, step.delay));
+            await typeLine(step);
+        }
+        // Add final prompt
+        const finalDiv = document.createElement('div');
+        finalDiv.className = 'command-line';
+        finalDiv.innerHTML = `<span class="prompt">user@portfolio:~$</span> <span class="cursor">_</span>`;
+        terminalBody.appendChild(finalDiv);
+    };
+
+    runSequence();
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+    initTerminalEffect();
+});
 
 // Animated counter for stats
 const animateStats = () => {
@@ -188,14 +257,14 @@ const animateStats = () => {
     
     stats.forEach(stat => {
         const target = parseInt(stat.innerText);
-        const increment = target / 50;
+        const increment = Math.ceil(target / 50);
         let current = 0;
 
         const updateCount = () => {
+            current += increment;
             if (current < target) {
-                current += increment;
-                stat.innerText = Math.ceil(current) + '+';
-                setTimeout(updateCount, 30);
+                stat.innerText = current + '+';
+                setTimeout(updateCount, 40);
             } else {
                 stat.innerText = target + '+';
             }
@@ -205,69 +274,75 @@ const animateStats = () => {
     });
 };
 
-// Parallax effect for geometric shapes
-const parallaxShapes = () => {
-    document.addEventListener('mousemove', (e) => {
-        const shapes = document.querySelectorAll('.shape');
-        const mouseX = e.clientX / window.innerWidth;
-        const mouseY = e.clientY / window.innerHeight;
-
-        shapes.forEach((shape, index) => {
-            const speed = (index + 1) * 2;
-            const x = (mouseX * speed);
-            const y = (mouseY * speed);
-            shape.style.transform = `translate(${x}px, ${y}px) rotate(${x * 5}deg)`;
-        });
-    });
-};
-
-// Glitch effect for name
-const glitchEffect = () => {
-    const glitchText = document.querySelector('.highlight');
-    const originalText = glitchText.innerText;
-    
-    const glitchChars = '!<>-_\\/[]{}—=+*^?#';
-    let interval;
-
-    const createGlitch = () => {
-        let newText = '';
-        for(let i = 0; i < originalText.length; i++) {
-            if(Math.random() < 0.1) {
-                newText += glitchChars[Math.floor(Math.random() * glitchChars.length)];
-            } else {
-                newText += originalText[i];
-            }
-        }
-        glitchText.innerText = newText;
-    };
-
-    glitchText.addEventListener('mouseenter', () => {
-        interval = setInterval(createGlitch, 100);
-    });
-
-    glitchText.addEventListener('mouseleave', () => {
-        clearInterval(interval);
-        glitchText.innerText = originalText;
-    });
-};
-
 // Intersection Observer for animations
 const observeElements = () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate');
-                if (entry.target.classList.contains('hero-stats')) {
+                // Check if the entry is a stat card or contains stats
+                if (entry.target.querySelector('.stat-number') || entry.target.classList.contains('stat-number')) {
                     animateStats();
+                    observer.unobserve(entry.target); // Only animate once
                 }
             }
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.hero-left, .hero-right, .hero-stats').forEach(el => {
+    document.querySelectorAll('.bento-card, .hero-left, .hero-right').forEach(el => {
         observer.observe(el);
     });
 };
+
+// System Logs Animation
+const initSystemLogs = () => {
+    const container = document.getElementById('system-logs');
+    if (!container) return;
+
+    const logs = [
+        "Initializing core services...",
+        "Loading aesthetic modules...",
+        "Optimizing asset delivery...",
+        "Connecting to neural net...",
+        "Handshake established (Secure)",
+        "Fetching latest projects...",
+        " Analyzing user behavior...",
+        "System operating at 99% efficiency",
+        "Deploying layout patches...",
+        "Scanning for coffee availability...",
+        "Synchronizing local storage...",
+        "Updating viewports..."
+    ];
+
+    const addLog = () => {
+        const log = logs[Math.floor(Math.random() * logs.length)];
+        const time = new Date().toLocaleTimeString('en-US', { hour12: false, hour: "2-digit", minute: "2-digit", second: "2-digit" });
+        
+        const entry = document.createElement('div');
+        entry.className = 'log-entry';
+        entry.innerHTML = `<span style="color: var(--text-muted)">[${time}]</span> ${log}`; // Fixed: added missing >
+        
+        container.prepend(entry);
+
+        // Keep only last 6 logs
+        if (container.children.length > 6) {
+            container.lastElementChild.remove();
+        }
+    };
+
+    // Initial population
+    for(let i=0; i<3; i++) setTimeout(addLog, i * 200);
+
+    // Continuous updates
+    setInterval(addLog, 2500);
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    initTerminalEffect();
+    observeElements();
+    initCommandClick();
+    initSystemLogs();
+});
 
 // Navbar scroll effect
 const navbarEffect = () => {

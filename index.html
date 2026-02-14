@@ -1,591 +1,976 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ahmed Touzani - Full Stack Web Developer</title>
-    <meta name="description" content="Ahmed Touzani - Full Stack Web Developer crafting modern digital experiences">
-    <meta name="author" content="Ahmed Touzani">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-</head>
-<body>
+    <meta
+      name="description"
+      content="Ahmed Touzani - Full Stack Web Developer crafting modern digital experiences"
+    />
+    <meta name="author" content="Ahmed Touzani" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bento.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+  </head>
+  <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
-            <!-- <a href="#" class="navbar-brand">Ahmed<span>Touzani</span></a> -->
-            
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
-            
-            <div class="nav-links">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
+      <div class="container">
+        <!-- <a href="#" class="navbar-brand">Ahmed<span>Touzani</span></a> -->
+
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <div class="nav-links">
+          <a href="#home" class="nav-link active">~/home</a>
+          <a href="#services" class="nav-link">~/protocols</a>
+          <a href="#projects" class="nav-link">~/deployments</a>
+          <a href="#about" class="nav-link">~/about</a>
+          <a href="#contact" class="nav-link">~/contact</a>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-bg">
-            <div class="geometric-shapes">
-                <div class="shape shape-circle"></div>
-                <div class="shape shape-square"></div>
-                <div class="shape shape-dots"></div>
+    <section id="home" class="hero" style="padding-top: 120px">
+      <div class="container">
+        <div class="bento-grid">
+          <!-- Live Terminal Window (Left - Large) -->
+          <div
+            class="bento-card col-span-8"
+            style="min-height: 500px; padding: 0"
+          >
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <span class="terminal-dot dot-red"></span>
+                <span class="terminal-dot dot-yellow"></span>
+                <span class="terminal-dot dot-green"></span>
+                <span class="terminal-title">user@ahmed-portfolio:~</span>
+              </div>
+              <div class="terminal-body" id="hero-terminal">
+                <!-- Dynamic Content via JS -->
+              </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-left">
-                    <h1 class="glitch-text">
-                        Marhaba! I'm<br>
-                        <span class="highlight">Ahmed Touzani</span>
-                    </h1>
-                    <p class="hero-text">Full Stack Web Developer crafting modern digital experiences</p>
-                    <div class="hero-buttons">
-                        <div class="magnetic-btn">
-                            <a href="#projects" class="hero-btn primary">
-                                View My Work
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="magnetic-btn">
-                            <a href="#contact" class="hero-btn secondary">
-                                Let's Talk
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat" data-value="3">
-                            <div class="stat-content">
-                                <span class="stat-number">3+</span>
-                                <span class="stat-label">Years Experience</span>
-                            </div>
-                            <div class="stat-bg"></div>
-                        </div>
-                        <div class="stat" data-value="20">
-                            <div class="stat-content">
-                                <span class="stat-number">20+</span>
-                                <span class="stat-label">Projects Completed</span>
-                            </div>
-                            <div class="stat-bg"></div>
-                        </div>
-                        <div class="stat" data-value="15">
-                            <div class="stat-content">
-                                <span class="stat-number">15+</span>
-                                <span class="stat-label">Happy Clients</span>
-                            </div>
-                            <div class="stat-bg"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-right">
-                    <div class="profile-image">
-                        <img src="images/profile.jpg" alt="Ahmed Touzani" class="hero-profile">
-                    </div>
-                </div>
+          </div>
+
+          <!-- Right Column (Stats & Snippet) -->
+          <div
+            class="col-span-4"
+            style="display: flex; flex-direction: column; gap: 1.5rem"
+          >
+            <!-- Identity / Status Card -->
+            <div class="bento-card" data-aos="fade-left">
+              <h2
+                class="text-gradient-gold"
+                style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem"
+              >
+                Ahmed Touzani
+              </h2>
+              <p
+                style="
+                  color: var(--text-muted);
+                  font-family: var(--font-mono);
+                  font-size: 0.9rem;
+                "
+              >
+                <span style="color: var(--emerald)">●</span> System Online
+              </p>
+              <div
+                style="
+                  margin-top: 1.5rem;
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 0.5rem;
+                "
+              >
+                <span class="skill-tag">Full Stack</span>
+                <span class="skill-tag">Growth</span>
+                <span class="skill-tag">Automation</span>
+              </div>
             </div>
+
+            <!-- Stats Row -->
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem"
+            >
+              <div
+                class="bento-card"
+                style="padding: 1.5rem; text-align: center"
+              >
+                <div
+                  class="text-gradient-gold stat-number"
+                  style="font-size: 2rem; font-weight: 700"
+                >
+                  6
+                </div>
+                <div
+                  style="
+                    font-size: 0.75rem;
+                    color: var(--text-muted);
+                    font-family: var(--font-mono);
+                    text-transform: uppercase;
+                  "
+                >
+                  Years Exp
+                </div>
+              </div>
+              <div
+                class="bento-card"
+                style="padding: 1.5rem; text-align: center"
+              >
+                <div
+                  class="text-gradient-gold stat-number"
+                  style="font-size: 2rem; font-weight: 700"
+                >
+                  27
+                </div>
+                <div
+                  style="
+                    font-size: 0.75rem;
+                    color: var(--text-muted);
+                    font-family: var(--font-mono);
+                    text-transform: uppercase;
+                  "
+                >
+                  Projects
+                </div>
+              </div>
+            </div>
+
+            <!-- Code Snippet Card -->
+            <div class="bento-card" data-aos="fade-up" data-aos-delay="100">
+              <div
+                class="terminal-header"
+                style="background: transparent; padding-left: 0; padding-top: 0"
+              >
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.8rem;
+                    color: var(--gold);
+                  "
+                  >expert_profile.json</span
+                >
+              </div>
+              <pre
+                style="
+                  font-family: var(--font-mono);
+                  font-size: 0.85rem;
+                  color: var(--text-muted);
+                  padding-top: 1rem;
+                "
+              >
+<span style="color: var(--gold);">"expertise"</span>: [
+  <span style="color: #fff;">"Bot Development"</span>,
+  <span style="color: #fff;">"AI Agents"</span>,
+  <span style="color: #fff;">"System Design"</span>
+],
+<span style="color: var(--gold);">"status"</span>: <span style="color: var(--emerald);">"Open for work"</span></pre>
+
+              <div class="hero-buttons" style="margin-top: 2rem">
+                <a
+                  href="#contact"
+                  class="hero-btn primary"
+                  style="width: 100%; justify-content: center"
+                >
+                  Initiate Protocol
+                </a>
+              </div>
+            </div>
+
+            <!-- System Operations Card (New Layout Fix) -->
+            <div
+              class="bento-card"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              style="
+                flex-grow: 1;
+                min-height: 180px;
+                display: flex;
+                flex-direction: column;
+              "
+            >
+              <div
+                class="terminal-header"
+                style="
+                  background: transparent;
+                  padding-left: 0;
+                  padding-top: 0;
+                  margin-bottom: 0.5rem;
+                  border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+                "
+              >
+                <i
+                  class="fas fa-microchip"
+                  style="color: var(--gold); margin-right: 0.5rem"
+                ></i>
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.8rem;
+                    color: var(--text-muted);
+                  "
+                  >SYSTEM_OPS</span
+                >
+                <span class="pulse-dot" style="margin-left: auto"></span>
+              </div>
+
+              <!-- Status Grid -->
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(2, 1fr);
+                  gap: 0.5rem;
+                  margin-bottom: 0.75rem;
+                "
+              >
+                <div
+                  style="
+                    background: rgba(255, 255, 255, 0.03);
+                    padding: 0.5rem;
+                    border-radius: 0.25rem;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: 0.65rem;
+                      color: var(--text-muted);
+                      margin-bottom: 0.25rem;
+                    "
+                  >
+                    CPU
+                  </div>
+                  <div
+                    class="stat-bar"
+                    style="
+                      height: 4px;
+                      background: rgba(255, 255, 255, 0.1);
+                      border-radius: 2px;
+                      overflow: hidden;
+                    "
+                  >
+                    <div
+                      style="
+                        width: 45%;
+                        height: 100%;
+                        background: var(--emerald);
+                        animation: pulseWidth 3s infinite;
+                      "
+                    ></div>
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: rgba(255, 255, 255, 0.03);
+                    padding: 0.5rem;
+                    border-radius: 0.25rem;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: 0.65rem;
+                      color: var(--text-muted);
+                      margin-bottom: 0.25rem;
+                    "
+                  >
+                    MEM
+                  </div>
+                  <div
+                    class="stat-bar"
+                    style="
+                      height: 4px;
+                      background: rgba(255, 255, 255, 0.1);
+                      border-radius: 2px;
+                      overflow: hidden;
+                    "
+                  >
+                    <div
+                      style="
+                        width: 60%;
+                        height: 100%;
+                        background: var(--gold);
+                        animation: pulseWidth 4s infinite reverse;
+                      "
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="system-logs" class="system-logs-container">
+                <!-- Dynamic Logs -->
+                <div class="log-entry" style="opacity: 0.5">
+                  <span>[SYSTEM]</span> core_modules_loaded...
+                </div>
+                <div class="log-entry" style="opacity: 0.6">
+                  <span>[NET]</span> handshake_init(secure)...
+                </div>
+                <div class="log-entry" style="opacity: 0.7">
+                  <span>[AUTH]</span> identity_verified...
+                </div>
+              </div>
+
+              <!-- Network Monitor (Fills bottom space) -->
+              <div
+                class="network-mon"
+                style="
+                  margin-top: auto;
+                  padding-top: 0.75rem;
+                  border-top: 1px solid rgba(255, 255, 255, 0.05);
+                "
+              >
+                <div
+                  style="
+                    font-size: 0.7rem;
+                    color: var(--gold);
+                    margin-bottom: 0.25rem;
+                  "
+                >
+                  ACTIVE_PORTS
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    font-family: var(--font-mono);
+                    font-size: 0.65rem;
+                    color: var(--text-muted);
+                  "
+                >
+                  <span
+                    >80: HTTP
+                    <span style="color: var(--emerald)">[OPEN]</span></span
+                  >
+                  <span
+                    >443: HTTPS
+                    <span style="color: var(--emerald)">[OPEN]</span></span
+                  >
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    font-family: var(--font-mono);
+                    font-size: 0.65rem;
+                    color: var(--text-muted);
+                    margin-top: 0.25rem;
+                  "
+                >
+                  <span
+                    >3000: APP
+                    <span style="color: var(--yellow-400, #fbbf24)"
+                      >[BUSY]</span
+                    ></span
+                  >
+                  <span
+                    >27017: DB
+                    <span style="color: var(--emerald)">[CONN]</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title"><span class="bracket-left"><</span> My Skills <span class="bracket-right">/></span></h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Frontend Development</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item" data-skill="HTML5">
-                            <div class="skill-icon">
-                                <i class="fab fa-html5"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>HTML5</h4>
-                                <p class="skill-description">Expert in semantic HTML and modern web standards</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="95"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-skill="CSS3">
-                            <div class="skill-icon">
-                                <i class="fab fa-css3-alt"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>CSS3</h4>
-                                <p class="skill-description">Advanced styling, animations, and responsive design</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="90"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-skill="JavaScript">
-                            <div class="skill-icon">
-                                <i class="fab fa-js"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>JavaScript</h4>
-                                <p class="skill-description">Modern ES6+, DOM manipulation, and async programming</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-skill="React">
-                            <div class="skill-icon">
-                                <i class="fab fa-react"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>React</h4>
-                                <p class="skill-description">Component-based architecture, hooks, and state management</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="80"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-skill="Vue.js">
-                            <div class="skill-icon">
-                                <i class="fab fa-vuejs"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Vue.js</h4>
-                                <p class="skill-description">Progressive framework, Vuex state management, Vue Router</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Backend Development</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item" data-skill="Node.js">
-                            <div class="skill-icon">
-                                <i class="fab fa-node-js"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Node.js</h4>
-                                <p class="skill-description">Server-side JavaScript, APIs, and Express framework</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="75"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-skill="PHP">
-                            <div class="skill-icon">
-                                <i class="fab fa-php"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>PHP</h4>
-                                <p class="skill-description">Backend development, Laravel framework, RESTful APIs</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="90"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-skill="Python">
-                            <div class="skill-icon">
-                                <i class="fab fa-python"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Python</h4>
-                                <p class="skill-description">Scripting, data analysis, machine learning</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="75"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-skill="MySQL">
-                            <div class="skill-icon">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>MySQL</h4>
-                                <p class="skill-description">Database design, optimization, and complex queries</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Tools & Technologies</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item" data-skill="Git">
-                            <div class="skill-icon">
-                                <i class="fab fa-git-alt"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Git</h4>
-                                <p class="skill-description">Version control, branching strategies, and collaboration</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-skill="Docker">
-                            <div class="skill-icon">
-                                <i class="fab fa-docker"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Docker</h4>
-                                <p class="skill-description">Containerization, deployment, microservices architecture</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="80"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-skill="AWS">
-                            <div class="skill-icon">
-                                <i class="fab fa-aws"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>AWS</h4>
-                                <p class="skill-description">Cloud services, EC2, S3, Lambda functions</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="75"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-skill="Linux">
-                            <div class="skill-icon">
-                                <i class="fab fa-linux"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Linux</h4>
-                                <p class="skill-description">Operating system, command line, shell scripting</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Soft Skills</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item" data-skill="Problem Solving">
-                            <div class="skill-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Problem Solving</h4>
-                                <p class="skill-description">Analytical thinking and creative solution development</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="90"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-skill="Team Work">
-                            <div class="skill-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Team Work</h4>
-                                <p class="skill-description">Collaboration, communication, and conflict resolution</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="90"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-skill="Communication">
-                            <div class="skill-icon">
-                                <i class="fas fa-comments"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Communication</h4>
-                                <p class="skill-description">Clear articulation, active listening, team collaboration</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="95"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-skill="Leadership">
-                            <div class="skill-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Leadership</h4>
-                                <p class="skill-description">Team guidance, project management, strategic planning</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-skill="Adaptability">
-                            <div class="skill-icon">
-                                <i class="fas fa-sync-alt"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Adaptability</h4>
-                                <p class="skill-description">Quick learning, flexibility, embracing new technologies</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="90"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-skill="Time Management">
-                            <div class="skill-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Time Management</h4>
-                                <p class="skill-description">Prioritization, deadline adherence, efficient workflow</p>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="90"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Services Section -->
+    <section id="services" class="section" style="padding: 100px 0">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">
+          <span class="bracket-left">&lt;</span> Core Protocols
+          <span class="bracket-right">/&gt;</span>
+        </h2>
+
+        <div class="bento-grid">
+          <!-- Service 1: Autonomous Systems -->
+          <div class="bento-card col-span-4 protocol-card" data-aos="fade-up">
+            <div class="scanline"></div>
+            <div class="corner corner-tl"></div>
+            <div class="corner corner-tr"></div>
+            <div class="corner corner-bl"></div>
+            <div class="corner corner-br"></div>
+
+            <div class="protocol-header">
+              <span>ID: AUTO-SYS-01</span>
+              <span class="protocol-status"></span>
             </div>
+
+            <div
+              style="
+                font-size: 2.5rem;
+                color: var(--gold);
+                margin-bottom: 1.5rem;
+              "
+            >
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3
+              style="
+                color: var(--text-main);
+                font-size: 1.25rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+              "
+            >
+              Autonomous Systems
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem">
+              Architecting intelligent agent swarms and self-healing systems
+              that operate without human intervention.
+            </p>
+            <div class="command-line" style="margin-top: 1.5rem">
+              <span class="prompt">$</span>
+              <span class="command"
+                >./deploy_agent.sh<span class="cursor-blink"></span
+              ></span>
+            </div>
+          </div>
+
+          <!-- Service 2: Growth Marketing -->
+          <div
+            class="bento-card col-span-4 protocol-card"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="scanline"></div>
+            <div class="corner corner-tl"></div>
+            <div class="corner corner-tr"></div>
+            <div class="corner corner-bl"></div>
+            <div class="corner corner-br"></div>
+
+            <div class="protocol-header">
+              <span>ID: GROWTH-ENG-02</span>
+              <span class="protocol-status"></span>
+            </div>
+
+            <div
+              style="
+                font-size: 2.5rem;
+                color: var(--gold);
+                margin-bottom: 1.5rem;
+              "
+            >
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3
+              style="
+                color: var(--text-main);
+                font-size: 1.25rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+              "
+            >
+              Growth Architecture
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem">
+              Engineering high-conversion technical sales funnels and
+              data-driven growth infrastructures.
+            </p>
+            <div class="command-line" style="margin-top: 1.5rem">
+              <span class="prompt">$</span>
+              <span class="command"
+                >optimize --conversion<span class="cursor-blink"></span
+              ></span>
+            </div>
+          </div>
+
+          <!-- Service 3: Automation -->
+          <div
+            class="bento-card col-span-4 protocol-card"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="scanline"></div>
+            <div class="corner corner-tl"></div>
+            <div class="corner corner-tr"></div>
+            <div class="corner corner-bl"></div>
+            <div class="corner corner-br"></div>
+
+            <div class="protocol-header">
+              <span>ID: WORKFLOW-OPS-03</span>
+              <span class="protocol-status"></span>
+            </div>
+
+            <div
+              style="
+                font-size: 2.5rem;
+                color: var(--gold);
+                margin-bottom: 1.5rem;
+              "
+            >
+              <i class="fas fa-cogs"></i>
+            </div>
+            <h3
+              style="
+                color: var(--text-main);
+                font-size: 1.25rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+              "
+            >
+              Custom Automation
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem">
+              Eliminating manual redundancy through custom open-source tools and
+              n8n/Zapier mastery.
+            </p>
+            <div class="command-line" style="margin-top: 1.5rem">
+              <span class="prompt">$</span>
+              <span class="command"
+                >cronjob -e<span class="cursor-blink"></span
+              ></span>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up"><span class="bracket-left"><</span> Projects <span class="bracket-right">/></span></h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card" data-aos="fade-up">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="E-commerce Platform">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" target="_blank" aria-label="Live Demo">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>Live Demo</span>
-                                </a>
-                                <a href="#" class="project-link" target="_blank" aria-label="View Code">
-                                    <i class="fab fa-github"></i>
-                                    <span>View Code</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div>
-                            <h3>E-commerce Platform</h3>
-                            <p>A full-featured e-commerce platform built with modern technologies. Features include secure payments, real-time inventory, and responsive design.</p>
-                        </div>
-                        <div class="tech-stack">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                            <span>Stripe</span>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">
+          <span class="bracket-left">&lt;</span> Deployed Architectures
+          <span class="bracket-right">/&gt;</span>
+        </h2>
 
-                <!-- Project 2 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Task Management System">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" target="_blank" aria-label="Live Demo">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>Live Demo</span>
-                                </a>
-                                <a href="#" class="project-link" target="_blank" aria-label="View Code">
-                                    <i class="fab fa-github"></i>
-                                    <span>View Code</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div>
-                            <h3>Task Management System</h3>
-                            <p>A collaborative task management application with real-time updates, team chat, and progress tracking capabilities.</p>
-                        </div>
-                        <div class="tech-stack">
-                            <span>Vue.js</span>
-                            <span>Firebase</span>
-                            <span>Socket.io</span>
-                            <span>Express</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="AI Content Generator">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" target="_blank" aria-label="Live Demo">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>Live Demo</span>
-                                </a>
-                                <a href="#" class="project-link" target="_blank" aria-label="View Code">
-                                    <i class="fab fa-github"></i>
-                                    <span>View Code</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div>
-                            <h3>AI Content Generator</h3>
-                            <p>An AI-powered platform that generates high-quality content using advanced natural language processing models.</p>
-                        </div>
-                        <div class="tech-stack">
-                            <span>Python</span>
-                            <span>TensorFlow</span>
-                            <span>Flask</span>
-                            <span>React</span>
-                        </div>
-                    </div>
-                </div>
+        <div class="bento-grid">
+          <!-- Project 1: Raymond Discord Bot -->
+          <div class="bento-card col-span-6 protocol-card" data-aos="fade-up">
+            <div class="scanline"></div>
+            <div class="corner corner-tl"></div>
+            <div class="corner corner-tr"></div>
+            <div class="corner corner-bl"></div>
+            <div class="corner corner-br"></div>
+            
+            <div class="protocol-header">
+                <span>ID: RAYMOND-CORE-V2</span>
+                <span class="protocol-status"></span>
             </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2><span class="bracket-left"><</span> About Me <span class="bracket-right">/></span></h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>Hello! I'm a <span class="highlight">Full Stack Developer</span> with a passion for creating beautiful and functional web applications. My journey in web development started with a curiosity for how things work on the internet, and it has evolved into a professional career where I blend creativity with technical expertise.</p>
-                <p>I specialize in <span class="highlight">modern web technologies</span> and have a strong foundation in both front-end and back-end development. My approach to development focuses on creating clean, efficient, and maintainable code while ensuring an exceptional user experience.</p>
+            <div
+              style="
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                color: var(--gold);
+                font-size: 1.5rem;
+              "
+            >
+              <!-- <i class="fab fa-discord"></i> -->
             </div>
-            <div class="about-skills">
-                <div class="skill-item">
-                    <i class="fas fa-code"></i>
-                    <h4>Web Development</h4>
-                    <p>Building responsive and dynamic web applications</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-database"></i>
-                    <h4>Backend Development</h4>
-                    <p>Creating robust server-side solutions</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h4>Responsive Design</h4>
-                    <p>Crafting mobile-first user experiences</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-tools"></i>
-                    <h4>Problem Solving</h4>
-                    <p>Finding efficient solutions to complex challenges</p>
-                </div>
+            <h3
+              style="
+                color: var(--text-main);
+                font-size: 1.5rem;
+                font-weight: 700;
+              "
+            >
+              Raymond
+            </h3>
+            <p
+              style="
+                color: var(--text-muted);
+                font-family: var(--font-mono);
+                margin-bottom: 1rem;
+              "
+            >
+              Flagship Discord Bot
+            </p>
+            <p
+              style="
+                color: var(--text-main);
+                margin-bottom: 1.5rem;
+                font-size: 0.95rem;
+              "
+            >
+              High-performance automated moderation and role orchestration bot. 
+              Built with robust state management to handle complex server workflows.
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 0.5rem;
+                margin-bottom: 2rem;
+                flex-wrap: wrap;
+              "
+            >
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Discord.js</span>
+              <span class="skill-tag">PostgreSQL</span>
             </div>
-        </div>
-    </section>
+            <a
+              href="https://github.com/ahmedtouzani/Raymond"
+              target="_blank"
+              class="hero-btn primary"
+              style="display: inline-flex"
+            >
+              View Source
+              <i class="fab fa-github" style="margin-left: 0.5rem"></i>
+            </a>
+          </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2><span class="bracket-left"><</span> Contact Me <span class="bracket-right">/></span></h2>
-        <div class="contact-content">
-            <form class="contact-form" id="contactForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="from_name" required>
-                        <label for="name">Name</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="email" name="reply_to" required>
-                        <label for="email">Email</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" id="message" name="message" required></textarea>
-                    <label for="message">Message</label>
-                </div>
-                <button type="submit" class="submit-btn">
-                    <span>Send</span>
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </form>
-            <div class="contact-links">
-                <a href="mailto:touzaniahmed39@gmail.com" class="contact-link">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://github.com/AhmedTou" target="_blank" class="contact-link">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com/in/ahmed-touzani" target="_blank" class="contact-link">
-                    <i class="fab fa-linkedin"></i>
-                </a>
+          <!-- Project 2: OpenClaw Workspaces -->
+          <div
+            class="bento-card col-span-6 protocol-card"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="scanline"></div>
+            <div class="corner corner-tl"></div>
+            <div class="corner corner-tr"></div>
+            <div class="corner corner-bl"></div>
+            <div class="corner corner-br"></div>
+
+            <div class="protocol-header">
+                <span>ID: OCLAW-ENV-SETUP</span>
+                <span class="protocol-status"></span>
             </div>
-        </div>
-        <div class="success-message">Message sent successfully!</div>
-        <div class="error-message">Oops! Something went wrong.</div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-pattern-container">
-            <div class="moroccan-pattern footer-pattern"></div>
-        </div>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-left" data-aos="fade-right">
-                    <div class="footer-logo">
-                        <h3>Ahmed<span>Touzani</span></h3>
-                        <p class="footer-tagline">Full Stack Developer</p>
-                    </div>
-                    <p class="footer-description">Crafting modern web experiences with passion and precision</p>
-                </div>
-                
-                <div class="footer-center" data-aos="fade-up">
-                    <h4>Navigation</h4>
-                    <nav class="footer-nav">
-                        <a href="#home" class="footer-link">Home</a>
-                        <a href="#skills" class="footer-link">Skills</a>
-                        <a href="#projects" class="footer-link">Projects</a>
-                        <a href="#about" class="footer-link">About</a>
-                        <a href="#contact" class="footer-link">Contact</a>
-                    </nav>
-                </div>
-
-                <div class="footer-right" data-aos="fade-left">
-                    <h4>Let's Connect</h4>
-                    <div class="social-links">
-                        <a href="https://github.com/AhmedTou" target="_blank" class="social-link" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/ahmed-touzani" target="_blank" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="mailto:touzaniahmed39@gmail.com" class="social-link" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
+            <div
+              style="
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                color: var(--gold);
+                font-size: 1.5rem;
+              "
+            >
+              <!--  -->
             </div>
             
+            <h3
+              style="
+                color: var(--text-main);
+                font-size: 1.5rem;
+                font-weight: 700;
+              "
+            >
+              OpenClaw Workspaces
+            </h3>
+            <p
+              style="
+                color: var(--text-muted);
+                font-family: var(--font-mono);
+                margin-bottom: 1rem;
+              "
+            >
+              Custom Environment Design
+            </p>
+            <p style="color: var(--text-main); margin-bottom: 1.5rem; font-size: 0.95rem;">
+               Designing tailored runtime environments and custom integrations for OpenClaw users to maximize agentic workflow efficiency.
+            </p>
+
+            <div
+              style="
+                display: flex;
+                gap: 0.5rem;
+                margin-bottom: 2rem;
+                flex-wrap: wrap;
+              "
+            >
+              <span class="skill-tag">Config</span>
+              <span class="skill-tag">Integrations</span>
+              <span class="skill-tag">Workflow Ops</span>
+            </div>
+            
+            <a
+              href="https://github.com/openclaw/openclaw"
+              target="_blank"
+              class="hero-btn primary"
+              style="display: inline-flex;"
+            >
+            View Base Tool <i class="fas fa-external-link-alt" style="margin-left: 0.5rem;"></i>
+            </a>
+          </div>
+          </div>
+
+          <!-- Service Request CTA -->
+          <div
+            class="bento-card col-span-12 cta-card"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <!-- Scanline effect inherited from protocol-card or added here if desired -->
+            <div class="scanline"></div> 
+            
+            <div style="z-index: 2; flex: 1;">
+              <span class="cta-status">
+                <i class="fas fa-satellite-dish pulse-dot" style="margin-right: 8px;"></i>
+                System_Broadcast: OPEN_FOR_COMMISSION
+              </span>
+              <h3
+                style="
+                  color: var(--text-main);
+                  font-size: 1.5rem;
+                  font-weight: 700;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                Initialize Custom Architecture
+              </h3>
+              <p style="color: var(--text-muted); max-width: 600px;">
+                Required custom agentic workflows, OpenClaw environment design, or Discord orchestration? 
+                Initiate uplink via secure channels.
+              </p>
+            </div>
+            
+            <div class="cta-actions">
+              <a href="mailto:touzaniahmed39@gmail.com" class="btn-glow">
+                <i class="fas fa-envelope"></i> EMAIL_DISPATCH
+              </a>
+              <a href="https://www.instagram.com/ah_4__8/" target="_blank" class="btn-glow-secondary">
+                <i class="fab fa-instagram"></i> QUANTUM_DM
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section: Operator Profile -->
+    <section id="about" class="section" style="padding: 100px 0">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">
+          <span class="bracket-left">&lt;</span> Operator Profile
+          <span class="bracket-right">/&gt;</span>
+        </h2>
+        
+        <div class="about-grid">
+            <!-- Left Column: Bio-Data & Stats -->
+            <div class="bento-card col-span-4 profile-card" data-aos="fade-right">
+                <div class="profile-image-container">
+                    <div class="scanner-line"></div>
+                    <div class="profile-overlay"></div>
+                    <!-- Using placeholder or profile.jpg if available, sizing to fit -->
+                    <img src="images/profile.jpg" alt="Ahmed Touzani" style="width: 100%; display: block; filter: grayscale(100%) contrast(1.2);">
+                </div>
+                
+                <h3 style="color: var(--text-main); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem;">Ahmed Touzani</h3>
+                <p style="color: var(--emerald); font-family: var(--font-mono); font-size: 0.8rem; margin-bottom: 1.5rem;">SYSTEM_ARCHITECT // LVL_25</p>
+                
+                <div class="stat-row">
+                    <span>LOCATION:</span>
+                    <span style="color: var(--gold);">OUJDA, MOROCCO</span>
+                </div>
+                <div class="stat-row">
+                    <span>AGE:</span>
+                    <span>25_YEARS</span>
+                </div>
+                <div class="stat-row">
+                    <span>EXPERIENCE:</span>
+                    <span>6+_YEARS</span>
+                </div>
+                <div class="stat-row">
+                    <span>STATUS:</span>
+                    <span style="color: var(--emerald);">ONLINE [ACTIVE]</span>
+                </div>
+                <div class="stat-row">
+                    <span>SPECIALIZATION:</span>
+                    <span>AUTONOMOUS_OPS</span>
+                </div>
+                <div class="stat-row" style="border-bottom: none;">
+                    <span>MISSION_TYPE:</span>
+                    <span>EFFICIENCY_MAX</span>
+                </div>
+            </div>
+
+            <!-- Right Column: Narrative & Skill Matrix -->
+            <div class="bento-card col-span-8" data-aos="fade-left">
+                <h3 style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 1.5rem; border-left: 4px solid var(--gold); padding-left: 1rem;">
+                    "I engineer autonomous digital ecosystems."
+                </h3>
+                
+                <p style="color: var(--text-muted); margin-bottom: 1rem; line-height: 1.7;">
+                    With a deep foundation in Full Stack Development and a strategic mastery of Marketing Engineering, I bridge the gap between complex logic and scalable profit. My journey is defined by a relentless pursuit of efficiency—whether it's architecting 
+                    <span style="color: var(--text-main); border-bottom: 1px dotted var(--gold);">AI Agent swarms</span>, 
+                    securing systems through <span style="color: var(--text-main); border-bottom: 1px dotted var(--emerald);">Offensive Security</span>, 
+                    or orchestrating high-performance automation workflows.
+                </p>
+                
+                <p style="color: var(--text-muted); margin-bottom: 2rem; line-height: 1.7;">
+                    I believe that code should be more than just functional—it should be a tactical asset that drives growth and ensures dominance in the digital landscape. From my base in Morocco, I help brands and innovators transform their vision into resilient, automated architectures.
+                </p>
+
+                <!-- Skill Matrix -->
+                <h4 style="color: var(--text-main); font-family: var(--font-mono); margin-bottom: 1rem; font-size: 1rem;">// SYSTEM_MODULES_LOADED</h4>
+                
+                <div class="skill-container">
+                    <div class="skill-header">
+                        <span>FULL_STACK_DEV [Node/React/Postgres]</span>
+                        <span style="color: var(--emerald);">98%</span>
+                    </div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 98%;"></div></div>
+                </div>
+                
+                <div class="skill-container">
+                    <div class="skill-header">
+                        <span>MARKETING_ENGINEERING [Growth/Funnels]</span>
+                        <span style="color: var(--gold);">92%</span>
+                    </div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+                </div>
+
+                <div class="skill-container">
+                    <div class="skill-header">
+                        <span>AUTOMATION_OPS [n8n/Agents]</span>
+                        <span style="color: var(--emerald);">95%</span>
+                    </div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+                </div>
+
+                <div class="skill-container">
+                    <div class="skill-header">
+                        <span>OFFENSIVE_SECURITY [Red_Teaming]</span>
+                        <span style="color: var(--gold);">85%</span>
+                    </div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+                </div>
+
+                <!-- Tactical Inventory (Filling the void) -->
+                <h4 style="color: var(--text-main); font-family: var(--font-mono); margin-bottom: 1rem; margin-top: 2rem; font-size: 1rem;">// TACTICAL_ASSETS</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                    <!-- Core -->
+                    <span class="skill-tag" style="border-color: var(--emerald); color: var(--emerald);">JavaScript_ES6+</span>
+                    <span class="skill-tag" style="border-color: var(--emerald); color: var(--emerald);">TypeScript</span>
+                    <span class="skill-tag" style="border-color: var(--emerald); color: var(--emerald);">Python</span>
+                    
+                    <!-- Backend & DB -->
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Redis</span>
+                    <span class="skill-tag">GraphQL</span>
+
+                    <!-- DevOps -->
+                    <span class="skill-tag" style="border-color: var(--gold); color: var(--gold);">Docker</span>
+                    <span class="skill-tag" style="border-color: var(--gold); color: var(--gold);">Linux_Kali</span>
+                    <span class="skill-tag" style="border-color: var(--gold); color: var(--gold);">AWS</span>
+                    
+                    <!-- Tools -->
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">n8n</span>
+                    <span class="skill-tag">Burp_Suite</span>
+                    <span class="skill-tag">Figma</span>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section: Direct Uplink -->
+    <section id="contact" class="section" style="padding: 100px 0; padding-bottom: 150px;">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">
+          <span class="bracket-left">&lt;</span> Initiate_Comms
+          <span class="bracket-right">/&gt;</span>
+        </h2>
+        
+        <div class="contact-grid">
+            <!-- Email (Primary) -->
+            <a href="mailto:touzaniahmed39@gmail.com" class="contact-card primary" data-aos="fade-up" data-aos-delay="0">
+                <i class="fas fa-envelope contact-icon"></i>
+                <span class="contact-label">Primary_Uplink</span>
+                <span class="contact-value">touzaniahmed39@gmail.com</span>
+                <span class="contact-action">SEND_TRANSMISSION</span>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/ah_4__8/" target="_blank" class="contact-card instagram" data-aos="fade-up" data-aos-delay="100">
+                <i class="fab fa-instagram contact-icon"></i>
+                <span class="contact-label">Quantum_DM</span>
+                <span class="contact-value">@ah_4__8</span>
+                <span class="contact-action">OPEN_CHANNEL</span>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/ahmedtouzani" target="_blank" class="contact-card github" data-aos="fade-up" data-aos-delay="200">
+                <i class="fab fa-github contact-icon"></i>
+                <span class="contact-label">Source_Code</span>
+                <span class="contact-value">@ahmedtouzani</span>
+                <span class="contact-action">git checkout</span>
+            </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- System Footer -->
+    <footer class="system-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Identity -->
+                <div class="footer-brand" data-aos="fade-right">
+                    <h3>Ahmed<span>Touzani</span></h3>
+                    <p>SYSTEM_ARCHITECT // LVL_25</p>
+                    <p style="margin-top: 1rem; opacity: 0.6;">
+                        Engineering autonomous digital ecosystems from the shadows.
+                    </p>
+                </div>
+
+                <!-- Command Navigation -->
+                <div class="footer-nav" data-aos="fade-up" data-aos-delay="100">
+                    <h4>// NAVIGATION</h4>
+                    <div class="footer-links">
+                        <a href="#home" class="footer-cmd-link">> cd ~/home</a>
+                        <a href="#services" class="footer-cmd-link">> cd ~/protocols</a>
+                        <a href="#projects" class="footer-cmd-link">> cd ~/deployments</a>
+                        <a href="#about" class="footer-cmd-link">> cd ~/about</a>
+                        <a href="#contact" class="footer-cmd-link">> ./initiate_comms.sh</a>
+                    </div>
+                </div>
+
+                <!-- Social Uplinks -->
+                <div class="footer-social" data-aos="fade-left" data-aos-delay="200">
+                    <h4>// CONNECT</h4>
+                    <div class="footer-social-links">
+                        <a href="https://github.com/ahmedtouzani" target="_blank" class="social-btn"><i class="fab fa-github"></i></a>
+                        <a href="https://instagram.com/ah_4___8" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:touzaniahmed39@gmail.com" class="social-btn"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
             <div class="footer-bottom">
-                <div class="footer-line"></div>
-                <div class="footer-info">
-                    <p class="copyright">&copy; <span id="year">2025</span> Ahmed Touzani</p>
-                    <p class="footer-quote">Built with <i class="fas fa-heart"></i> in Morocco</p>
+                <div class="status-indicator">
+                    <div class="status-dot"></div>
+                    <span>SYSTEM STATUS: NOMINAL</span>
+                </div>
+                
+                <div class="copyright">
+                    &copy; <span id="year">2026</span> Ahmed Touzani. All systems operational.
+                </div>
+
+                <div class="version">
+                    v2.5.0-Obsidian
                 </div>
             </div>
         </div>
@@ -593,7 +978,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
