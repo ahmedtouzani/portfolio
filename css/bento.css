@@ -565,12 +565,99 @@
 /* --- System Footer --- */
 .system-footer {
     background: #050505;
-    border-top: 1px solid rgba(6, 78, 59, 0.3);
+    border-top: 1px solid rgba(230, 0, 0, 0.3); /* Crimson */
     padding: 4rem 0 2rem;
     font-family: 'JetBrains Mono', monospace;
     position: relative;
     overflow: hidden;
 }
+
+/* ... existing footer styles ... */
+
+/* --- About Section: Operator Profile --- */
+.profile-image-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid var(--border-gold-subtle);
+}
+
+.profile-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(5, 5, 5, 0.8));
+    z-index: 2;
+}
+
+.scanner-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--emerald); /* Crimson via var */
+    box-shadow: 0 0 10px var(--emerald);
+    z-index: 3;
+    animation: scanProfile 3s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+@keyframes scanProfile {
+    0% { top: 0; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.stat-row span:last-child {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+/* Skill Matrix */
+.skill-container {
+    margin-bottom: 1rem;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.skill-bar-bg {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    background: var(--emerald); /* Crimson via var */
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(230, 0, 0, 0.3);
+    width: 0; /* Animated inline */
+    transition: width 1s ease-out;
+}
+
 
 .system-footer::before {
     content: '';
