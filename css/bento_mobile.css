@@ -1,0 +1,23 @@
+
+/* Responsive optimizations for mobile devices */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px !important;
+    }
+    .bento-card {
+        padding: 1.5rem !important;
+        border-radius: 1.5rem !important;
+    }
+    .stat-number {
+        font-size: 1.8rem !important;
+    }
+    .terminal-window {
+        min-height: 400px !important;
+    }
+    .terminal-body {
+        font-size: 0.75rem !important;
+    }
+    .hero {
+        padding-top: 80px !important;
+    }
+}

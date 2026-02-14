@@ -1,8 +1,9 @@
 // Initialize AOS
+const isMobile = window.innerWidth <= 768;
 AOS.init({
-    duration: 1000,
+    duration: isMobile ? 600 : 1000,
     once: true,
-    offset: 100
+    offset: isMobile ? 50 : 100
 });
 
 // EmailJS initialization
@@ -1237,7 +1238,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     enhanced3DTiltEffect();
     enhancedMagneticEffect();
-    createAdvancedCursor();
+    if (!isMobile) {
+        createAdvancedCursor();
+    }
     createEnhancedParticles();
     glitchEffect();
     typingEffect();

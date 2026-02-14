@@ -1444,7 +1444,7 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        /* display: none; Removed to fix mobile menu functionality */
     }
     
     .hero h1 {
